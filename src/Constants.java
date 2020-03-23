@@ -1,3 +1,6 @@
+/**
+ * Implements all constants
+ */
 public final class Constants {
     public Constants() {
         // restrict instantiation

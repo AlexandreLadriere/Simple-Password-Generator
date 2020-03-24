@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +24,12 @@ public class Controller implements ActionListener {
             } catch (NumberFormatException ex) {
                 gui.getPasswordTextField().setText(gui.getPwdGenerator().generate(0, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE, Boolean.FALSE));
             }
+        }
+        if (cmd.equals(gui.getCopyButton())) {
+            String pwd = gui.getPasswordTextField().getText();
+            StringSelection stringSelection = new StringSelection(pwd);
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(stringSelection, null);
         }
     }
 }

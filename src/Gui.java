@@ -10,9 +10,9 @@ public class Gui extends JPanel {
     private JCheckBox numbersCheckBox;
     private JCheckBox specialCharactersCheckBox;
 
-    private PasswordGenerator pwdGenerator;
+    private PasswordGeneratorModel pwdGenerator;
 
-    public Gui(PasswordGenerator pwdGenerator) {
+    public Gui(PasswordGeneratorModel pwdGenerator) {
         this.pwdGenerator = pwdGenerator;
         this.setLayout(new BorderLayout());
 
@@ -83,7 +83,7 @@ public class Gui extends JPanel {
         return passwordTextField;
     }
 
-    public PasswordGenerator getPwdGenerator() {
+    public PasswordGeneratorModel getPwdGenerator() {
         return pwdGenerator;
     }
 }

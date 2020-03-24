@@ -1,5 +1,8 @@
 import javax.swing.*;
 
+/**
+ * Implements the password generator application
+ */
 public class PasswordGenerator extends JFrame {
 
     public PasswordGenerator() {

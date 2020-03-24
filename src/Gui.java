@@ -2,6 +2,9 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
+/**
+ * Implements the GUI of the Password Generator
+ */
 public class Gui extends JPanel {
     private JTextField passwordTextField;
     private JTextField pwdLengthTextField;
@@ -99,6 +102,11 @@ public class Gui extends JPanel {
         this.add(generatePwdButton, BorderLayout.SOUTH);
     }
 
+    /**
+     * Initializes a checkbox design according to the predefined theme
+     *
+     * @param checkBox The checkbox you want to initialize the design
+     */
     private void initCheckBoxDesign(JCheckBox checkBox) {
         checkBox.setHorizontalAlignment(JCheckBox.CENTER);
         checkBox.setFont(FONT);

@@ -1,6 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Implements the interface controller
+ */
 public class Controller implements ActionListener {
     private Gui gui;
 

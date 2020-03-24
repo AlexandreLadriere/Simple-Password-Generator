@@ -1,61 +1,23 @@
-import java.util.Random;
+import javax.swing.*;
 
 /**
- * Implements a simple password generator
+ * Implements the password generator application
  */
-public class PasswordGenerator {
+public class PasswordGenerator extends JFrame {
 
-    /**
-     * Generates a password according to the given parameters
-     *
-     * @param length               Length of the password
-     * @param hasNumbers           Boolean to indicate if the password must contains numbers or not
-     * @param hasUpperCaseLetters  Boolean to indicate if the password must contains upper case letters or not
-     * @param hasLowerCaseLetters  Boolean to indicate if the password must contains lower case letters or not
-     * @param hasSpecialCharacters Boolean to indicate if the password must contains special characters or not
-     * @return Password in string format
-     */
-    public String generate(Integer length, Boolean hasNumbers, Boolean hasUpperCaseLetters, Boolean hasLowerCaseLetters, Boolean hasSpecialCharacters) {
-        String usedCharacters = "";
-        if (hasNumbers) {
-            usedCharacters += Constants.numbers;
-        }
-        if (hasSpecialCharacters) {
-            usedCharacters += Constants.specialCharacters;
-        }
-        if (hasLowerCaseLetters) {
-            usedCharacters += Constants.lowerCaseLetters;
-        }
-        if (hasUpperCaseLetters) {
-            usedCharacters += Constants.upperCaseLetters;
-        }
-        if (!hasLowerCaseLetters && !hasUpperCaseLetters && !hasNumbers && !hasSpecialCharacters) {
-            return "";
-        }
-        if (length <= 0) {
-            return "";
-        }
-        char[] password = new char[length];
-        Random random = new Random();
-
-        for (int i = 0; i < length; i++) {
-            password[i] = usedCharacters.charAt(random.nextInt(usedCharacters.length()));
-        }
-
-        return charArrayToString(password);
+    public PasswordGenerator() {
+        super("Password generator - Alexandre Ladrière - 2020");
+        setResizable(false);
+        PasswordGeneratorModel pwdGenerator = new PasswordGeneratorModel();
+        Gui gui = new Gui(pwdGenerator);
+        setContentPane(gui);
+        this.setSize(450, 400);
+        // pack();
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    /**
-     * Converts a char array to a string. For example ['h', 'e', 'l', 'l', 'o'] will become "hello"
-     *
-     * @param charArray The char array you want to convert to a string
-     * @return String representation of the content of the given char array
-     */
-    private String charArrayToString(char[] charArray) {
-        StringBuilder string = new StringBuilder();
-        for (char c : charArray) {
-            string.append(c);
-        }
-        return string.toString();
+    public static void main(String[] args) {
+        new PasswordGenerator();
     }
 }

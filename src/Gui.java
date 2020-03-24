@@ -9,6 +9,7 @@ public class Gui extends JPanel {
     private JTextField passwordTextField;
     private JTextField pwdLengthTextField;
     private JButton generatePwdButton;
+    private JButton copyButton;
     private JCheckBox upperCaseCheckBox;
     private JCheckBox lowerCaseCheckBox;
     private JCheckBox numbersCheckBox;
@@ -50,11 +51,16 @@ public class Gui extends JPanel {
         northPanel.setBorder(new EmptyBorder(10, 20, 20, 20));
         passwordTextField = new JTextField();
         passwordTextField.setBorder(new EmptyBorder(10, 10, 10, 10));
-        passwordTextField.setHorizontalAlignment(JTextField.CENTER);
         passwordTextField.setFont(FONT);
         passwordTextField.setBackground(MAIN_COLOR_DARK);
         passwordTextField.setForeground(TEXT_COLOR);
+        copyButton = new JButton("Copy");
+        copyButton.setBackground(MAIN_COLOR_LIGHT);
+        copyButton.setForeground(TEXT_COLOR);
+        copyButton.setFont(FONT);
+        copyButton.addActionListener(new Controller(this));
         northPanel.add(passwordTextField, BorderLayout.CENTER);
+        northPanel.add(copyButton, BorderLayout.EAST);
         mainCenterPanel.add(northPanel, BorderLayout.NORTH);
         // Center - Center
         JPanel mainCenterCenterPanel = new JPanel();
@@ -97,7 +103,6 @@ public class Gui extends JPanel {
         generatePwdButton.setFont(FONT_BUTTON);
         generatePwdButton.setForeground(TEXT_COLOR);
         generatePwdButton.setBackground(MAIN_COLOR_LIGHT);
-        generatePwdButton.setBorder(new EmptyBorder(10, 10, 10, 10));
         southPanel.add(generatePwdButton, BorderLayout.CENTER);
         this.add(generatePwdButton, BorderLayout.SOUTH);
     }
@@ -145,5 +150,9 @@ public class Gui extends JPanel {
 
     public PasswordGeneratorModel getPwdGenerator() {
         return pwdGenerator;
+    }
+
+    public JButton getCopyButton() {
+        return copyButton;
     }
 }

@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.security.SecureRandom;
 
 /**
  * Implements a simple password generator
@@ -36,7 +36,7 @@ public class PasswordGeneratorModel {
             return "";
         }
         char[] password = new char[length];
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
 
         for (int i = 0; i < length; i++) {
             password[i] = usedCharacters.charAt(random.nextInt(usedCharacters.length()));

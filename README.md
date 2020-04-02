@@ -1,7 +1,6 @@
 # Simple Password Generator (with GUI)
 
 [![GitHub license](https://img.shields.io/github/license/AlexandreLadriere/Simple-Password-Generator.svg)](https://github.com/AlexandreLadriere/Simple-Password-Generator/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/AlexandreLadriere/Simple-Password-Generator)](https://github.com/AlexandreLadriere/Simple-Password-Generator/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/AlexandreLadriere/Simple-Password-Generator.svg)](https://github.com/AlexandreLadriere/Simple-Password-Generator)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d26d2c8a0d6a45e1a089ace945e6318d)](https://www.codacy.com/manual/alexandre.ladriere77/Simple-Password-Generator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexandreLadriere/Simple-Password-Generator&amp;utm_campaign=Badge_Grade)
 
